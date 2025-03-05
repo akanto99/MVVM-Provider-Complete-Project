@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'package:mvvm_provider_completeproject/model/user_model.dart';
+import 'package:mvvm_provider_completeproject/model/user_model/user_model.dart';
 import 'package:mvvm_provider_completeproject/respository/auth_repository.dart';
 import 'package:mvvm_provider_completeproject/utils/routes/routes_name.dart';
 import 'package:mvvm_provider_completeproject/utils/utils.dart';
@@ -59,13 +59,20 @@ class AuthViewModel with ChangeNotifier {
 
       Utils.flushBarSuccessMessage('Login Successfully', context);
 
-      String role = value['role'].toString().toLowerCase();
-      switch (role) {
-        case 'clients':
-          Navigator.pushNamed(context, RoutesName.homeView);
-          break;
-        default:
-          break;
+      // String role = value['role'].toString().toLowerCase();
+      // switch (role) {
+      //   case 'clients':
+      //     Navigator.pushNamed(context, RoutesName.homeView);
+      //     break;
+      //   default:
+      //     break;
+      // }
+      String token = value['token'].toString();
+
+      if (token.isNotEmpty) {
+        Navigator.pushNamed(context, RoutesName.homeView);
+      } else {
+        Utils.flushBarErrorMessage('Invalid token', context);
       }
 
       if (kDebugMode) {

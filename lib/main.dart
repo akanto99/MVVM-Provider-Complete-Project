@@ -5,6 +5,7 @@ import 'package:mvvm_provider_completeproject/provider/dark_light_theme_provider
 import 'package:mvvm_provider_completeproject/res/color.dart';
 import 'package:mvvm_provider_completeproject/utils/routes/routes.dart';
 import 'package:mvvm_provider_completeproject/view_model/auth_view_model.dart';
+import 'package:mvvm_provider_completeproject/view_model/home_view_model/home_view_model.dart';
 import 'package:mvvm_provider_completeproject/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
 import 'utils/routes/routes_name.dart';
@@ -34,6 +35,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
         ChangeNotifierProvider(create: (_) => UserViewModel()),
         ChangeNotifierProvider(create: (_) => themeProvider),
+        ChangeNotifierProvider(create: (_) => HomeViewModel(),),
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, child) {

@@ -39,41 +39,6 @@ class _SplashViewState extends State<SplashView> {
     final screenHeight = MediaQuery.of(context).size.height *1;
     final screenWidth = MediaQuery.of(context).size.width *1;
 
-    return SingleChildScrollView(
-      child: Column(
-      
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-      
-      
-      
-          SizedBox(),
-      
-      
-          Center(
-            child: Column(
-              children: [
-                Container(
-                    height: screenHeight*0.9,
-                    width: screenWidth*0.5,
-                  // color: Colors.red,
-                  child:  Image.asset("images/c9LogoLatest.png",),
-                  // child:  Image.asset("images/splashimg.png",),
-                  ),
-      
-      
-                Text("Attendly",style: (TextStyle(color:AppColors.navButtonColor,fontSize: 25,fontWeight: FontWeight.w500)),),
-      
-              ],
-            ),
-      
-      
-          ),
-      
-          // Text("Attendly",style: (TextStyle(color:Color(0xffffa801),fontSize: 15,fontWeight: FontWeight.w500)),),
-      
-        ],
-      ),
-    );}
+    return Center(
+        child: Text("Attendly",style: (TextStyle(color:AppColors.navButtonColor,fontSize: 25,fontWeight: FontWeight.w500)),));}
 }
